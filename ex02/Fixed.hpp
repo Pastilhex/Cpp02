@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:00:27 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/04 14:53:42 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:06:27 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,13 @@ public:
 	// 4 arithmetic
 	Fixed operator+(Fixed value);
 	Fixed operator-(Fixed value);
-	Fixed operator*(Fixed value);
-	Fixed operator/(Fixed value);
+	Fixed operator*(const Fixed& value);
+	Fixed operator/(const Fixed& value);
 
 	// 4 increment/decrement
+	Fixed operator++( void );
 	Fixed operator++(int value);
+	Fixed operator--( void );
 	Fixed operator--(int value);
 
 };

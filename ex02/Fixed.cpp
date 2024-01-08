@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:00:16 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/04 14:59:05 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:07:15 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,25 +101,41 @@ bool Fixed::operator!=(Fixed value) {
 };
 
 Fixed Fixed::operator+(Fixed value) {
-	return this->fixedPoint += value.fixedPoint;
+	return this->toFloat() + value.toFloat();
 };
 
 Fixed Fixed::operator-(Fixed value) {
-	return this->fixedPoint -= value.fixedPoint;
+	return this->toFloat() - value.toFloat();
 };
 
-Fixed Fixed::operator*(Fixed value) {
-	return this->fixedPoint *= value.fixedPoint;
+Fixed Fixed::operator*(const Fixed& value) {
+	return this->toFloat() * value.toFloat();
 };
 
-Fixed Fixed::operator/(Fixed value) {
-	return this->fixedPoint /= value.fixedPoint;
+Fixed Fixed::operator/(const Fixed& value) {
+	return this->toFloat() / value.toFloat();
+};
+
+Fixed Fixed::operator++( void ) {
+	++this->fixedPoint;
+	return *this;
 };
 
 Fixed Fixed::operator++(int value) {
-	return value += 1;
+	(void) value;
+	Fixed tmp = *this;
+	this->fixedPoint++;
+	return tmp;
+};
+
+Fixed Fixed::operator--( void ) {
+	--this->fixedPoint;
+	return *this;
 };
 
 Fixed Fixed::operator--(int value) {
-	return value -= 1;
+	(void) value;
+	Fixed tmp = *this;
+	this->fixedPoint--;
+	return tmp;
 };
