@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:00:00 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/08 16:48:40 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:50:02 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 int main( void ) {
 	Fixed	a;
 	Fixed 	const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	a = Fixed(0);
 	
-	std::cout << a << std::endl;
+	// std::cout << a << std::endl;
 	// std::cout << ++a << std::endl;
 	// std::cout << a << std::endl;
 	// std::cout << a++ << std::endl;
@@ -27,15 +26,19 @@ int main( void ) {
 
 	// Fixed ac(Fixed( 5.05f ) + Fixed( 2 ));
 	// std::cout << "Fixed(5.05f) + Fixed(2) = " << ac << std::endl;
+	
 	// Fixed ad(Fixed( 5.05f ) - Fixed( 2 ));
 	// std::cout << "Fixed(5.05f) - Fixed(2) = " << ad << std::endl;
+	
 	// Fixed ae(Fixed( 5.05f ) / Fixed( 2 ));
 	// std::cout << "Fixed(5.05f) / Fixed(2) = " << ae << std::endl;
+	
 	// Fixed af(Fixed( 5.05f ) * Fixed( 2 ));
 	// std::cout << "Fixed(5.05f) * Fixed(2) = " << af << std::endl;
 
 	// Fixed c = b / Fixed(2);
 	// std::cout << c << std::endl;
+	
 	// std::cout << "\nMy tests: \n";
 	// std::cout << "a = " << a.getRawBits() << std::endl;
 	// ++a;
