@@ -66,6 +66,10 @@ std::ostream& operator<<(std::ostream& out, Fixed const& fixed)
 	return (out);
 }
 
+float& operator-(float fvalue, Fixed const& value) {
+	return fvalue - value;
+}
+
 Fixed& Fixed::min(Fixed& a, Fixed& b) {
 	return (a.fixedPoint < b.fixedPoint) ? a : b;
 }
@@ -106,11 +110,11 @@ bool Fixed::operator!=(Fixed value) {
 	return (value.fixedPoint != this->fixedPoint) ? true : false;
 };
 
-Fixed Fixed::operator+(Fixed value) {
+Fixed Fixed::operator+(const Fixed& value) {
 	return this->toFloat() + value.toFloat();
 };
 
-Fixed Fixed::operator-(Fixed value) {
+Fixed Fixed::operator-(const Fixed& value) {
 	return this->toFloat() - value.toFloat();
 };
 

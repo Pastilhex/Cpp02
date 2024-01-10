@@ -26,6 +26,10 @@ public:
 	Point(const Point& copy);
 	Point& operator=(const Point& input);
 	~Point( void );
+	Fixed getX( void ) const;
+	Fixed getY( void ) const;
+
+	float operator-(const Fixed& value);
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);

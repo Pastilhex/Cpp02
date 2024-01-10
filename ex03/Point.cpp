@@ -32,6 +32,20 @@ Point& Point::operator=(const Point& input) {
 }
 
 Point::~Point( void ) {
-	
 }
 
+Fixed Point::getX( void ) const {
+	return this->x;
+}
+
+Fixed Point::getY( void ) const {
+	return this->y;
+}
+
+bool bsp( Point const a, Point const b, Point const c, Point const point) {
+	Fixed detT = (b.getY() - c.getY()) * (a.getX() - c.getX()) + (c.getX() - b.getX()) * (a.getY() - c.getY());
+    Fixed alpha = ((b.getY() - c.getY()) * (point.getX() - c.getX()) + (c.getX() - b.getX()) * (point.getY() - c.getY())) / detT;
+    Fixed beta = ((c.getY() - a.getY()) * (point.getX() - c.getX()) + (a.getX() - c.getX()) * (point.getY() - c.getY())) / detT;
+    float gamma = 1.0f - alpha - beta;
+	return alpha >= 0.0f && beta >= 0.0f && gamma >= 0.0f;
+}

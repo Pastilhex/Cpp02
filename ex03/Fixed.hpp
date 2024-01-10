@@ -49,8 +49,8 @@ public:
 	bool operator!=(Fixed value);
 
 	// 4 arithmetic
-	Fixed operator+(Fixed value);
-	Fixed operator-(Fixed value);
+	Fixed operator+(const Fixed& value);
+	Fixed operator-(const Fixed& value);
 	Fixed operator*(const Fixed& value);
 	Fixed operator/(const Fixed& value);
 
@@ -64,5 +64,6 @@ public:
 
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixed);
+float& operator-(float fvalue, Fixed const& value);
 
 #endif
