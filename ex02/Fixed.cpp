@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:00:16 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/08 14:10:32 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:04:59 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Fixed::Fixed(const Fixed& copy) {
 Fixed& Fixed::operator=(const Fixed& input) {
 	std::cout << "Copy assignment operator called" << std::endl;
     if (this != &input) {
-        this->fixedPoint = input.getRawBits();
+        this->setRawBits(input.getRawBits());
     }
     return *this;
 }

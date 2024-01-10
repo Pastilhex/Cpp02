@@ -6,42 +6,42 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:00:16 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/08 14:10:32 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:57:12 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	this->fixedPoint = 0;
 }
 
 Fixed::Fixed(const int& input) {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->fixedPoint = input << this->fractionalBits;
 }
 
 Fixed::Fixed(const float& input) {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->fixedPoint = roundf(input * (1 << this->fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& copy) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed& Fixed::operator=(const Fixed& input) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
     if (this != &input) {
-        this->fixedPoint = input.getRawBits();
+        this->setRawBits(input.getRawBits());
     }
     return *this;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 };
 
 int Fixed::toInt(void) const {
@@ -64,10 +64,6 @@ std::ostream& operator<<(std::ostream& out, Fixed const& fixed)
 {
 	out << fixed.toFloat();
 	return (out);
-}
-
-float& operator-(float fvalue, Fixed const& value) {
-	return fvalue - value;
 }
 
 Fixed& Fixed::min(Fixed& a, Fixed& b) {

@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:00:27 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/08 16:17:46 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:50:48 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ public:
 
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixed);
-float& operator-(float fvalue, Fixed const& value);
 
 #endif
